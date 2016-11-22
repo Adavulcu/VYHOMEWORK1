@@ -8,7 +8,6 @@ namespace _14253024HW1
 {
     class extract<T> where T : IComparable
     {
-       
         Stack<T> temp;
         Stack<T> temp2;
         T temp1;
