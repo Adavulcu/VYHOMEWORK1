@@ -8,7 +8,6 @@ namespace _14253024HW1
 {
     class subset<T> where T : IComparable
     {
-       
         CircularQueue<T> temp_queue;
         CircularQueue<T> temp_queue1;
         int counter = 0, counter1 = 0;// ilk ve ikinci dizilerin eleman sayısısı tutan degişkenler
@@ -119,8 +118,7 @@ namespace _14253024HW1
                             control =true;
                      
                         }
-                        temp_queue.enQueue(temp);
-                                                  
+                        temp_queue.enQueue(temp);                                                 
                     }
                     if (control)
                         control2++;
