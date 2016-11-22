@@ -12,7 +12,6 @@ namespace _14253024HW1
         Stack<T> temp;
         Stack<T> temp2;
         T temp1;
-    
         public void stackOutValue (Stack<int> gelenStack,int deger)
         {//Stackten degeri search edip çıkartma methodu
             Stack<int> yedekStack = new Stack<int>(gelenStack.size());
