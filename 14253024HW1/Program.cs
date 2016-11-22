@@ -49,7 +49,7 @@ namespace _14253024HW1
                 //sınıfın nesnesi              
               //  extract_int.ext(3, stk_int);
               extract<string> extract_string = new extract<string>();
-                extract_string.ext("a", stk_string);
+                extract_string.stackOutValue("a", stk_string);
 
                 Console.WriteLine("\t\t\t\t2. maddeye gecmek için ENTER tusuna basın....\n");
               //  Console.ReadLine();

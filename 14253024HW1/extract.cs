@@ -13,44 +13,34 @@ namespace _14253024HW1
         Stack<T> temp2;
         T temp1;
     
-        public void ext(T value,Stack<T>st)
-        {
-           
-            temp = new Stack<T>(st.size());//parametre olarak alınan stackin yedeklendigi stack
-            temp2 = new Stack<T>(st.size());//parametre olarak alınan ve cıkarılması istenen degerin tutuldugu yedek stack
-            try
-            {             
-               for (int i = 0; i < st.size(); i++)//stack  elemanları yedek stacak aktarılıyor
-                 {
-                     if (!st.isEmpty())
-                        temp.push(st.pop());
-                 }                   
-               for (int i = 0; i < temp.size(); i++)
-                 {
-                     if (!temp.isEmpty())
-                     {
-                        temp1 = temp.pop();
-                        if (temp1.CompareTo(value)==0)//eger istenen deger stackta yoksa kontrol edilen stack elemanı tekrar eski stackine akatarılıyor
-                        {
-                            
-                            temp2.push(temp1);
-                        }
-                        else// eger stackteki elaman aranan elemanla eşleşiyorsa eşleşen stack elemanı diger yedek stack elemanına aktarılıyor
-                            st.push(temp1);
-                    }
-                 }
-                Console.WriteLine("\tstackin son hali...\n");   
-                st.display();
-                if(!temp2.isEmpty())
-                Console.WriteLine("\tstacktan cıkarılan deger..\n");
-               temp2.display();
-                
-            }
-            catch (Exception ex)
+        public void stackOutValue (Stack<int> gelenStack,int deger)
+        {//Stackten degeri search edip çıkartma methodu
+            Stack<int> yedekStack = new Stack<int>(gelenStack.size());
+            Stack<int> yedekStack2 = new Stack<int>(gelenStack.size());
+            while (!gelenStack.isEmpty())
             {
-
-                Console.WriteLine(ex);
+                yedekStack.push(gelenStack.pop());          //Stacki yedekliyoruz.
             }
+            while (!yedekStack.isEmpty())
+            {
+                int geciciYedekDeger=yedekStack.pop();
+                gelenStack.push(geciciYedekDeger);
+                if (geciciYedekDeger==deger)                //Stackte ki değeri ile çıkartacağımız değer ise o değeri çıkartıyoruz.Yani hiç bir şey yapmıyoruz.
+                {
+                    
+                }
+                else                                        //Değilse o değeri tekrar başka bir stacke ekliyoruz.
+                {
+                    yedekStack2.push(geciciYedekDeger);
+                }
+            }
+            Stack<int> yeniStack = new Stack<int>(gelenStack.size());
+            Console.WriteLine("Eski Stack");                                                    //Stackleri yazdırıyoruz.
+            gelenStack.display();
+            Console.WriteLine("Çıkarttığınız Değer "+deger);
+            Console.WriteLine();
+            Console.WriteLine("Yeni Stack");
+            yedekStack2.display();
         }
        
       
