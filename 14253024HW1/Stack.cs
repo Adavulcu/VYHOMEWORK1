@@ -44,7 +44,7 @@ namespace _14253024HW1
         {
             if (isFull())
                 //throw new Exception("stack is full");
-                Console.WriteLine("stack is full");
+                Console.WriteLine("Stack is full.");
             else
             {
                 values[++top] = val;
@@ -55,7 +55,7 @@ namespace _14253024HW1
         {
             if (isEmpty())
             {
-                throw new Exception("stack is empty");
+                throw new Exception("Stack is empty.");
                 //return default(T);
             }
             else
